@@ -15,7 +15,7 @@
 %-----------------------------
 % Formatting list items
 %-----------------------------	
-\setlength{\parindent}{0pt}		  % to remove paragraph indent
+\setlength{\parindent}{0pt}	% to remove paragraph indent
 
 \usepackage{enumitem}		
   \setlist[itemize]{noitemsep, 	% to remove space before and after list items
@@ -26,10 +26,10 @@
 %-----------------------------
 % Packages
 %-----------------------------		
-\usepackage[svgnames]{xcolor}		        % touch of colour
-  \colorlet{cvColour}{DarkOliveGreen}		% colour variable for changing all colours at once
+\usepackage[svgnames]{xcolor}		% touch of colour
+  \colorlet{cvColour}{DarkOliveGreen}	% colour variable for changing all colours at once
 
-\usepackage[fixed]{fontawesome5}	    	% for icons
+\usepackage[fixed]{fontawesome5}	% for icons
   
 \usepackage{hyperref}                   % for links, should be last package to load
 \hypersetup{
@@ -39,33 +39,33 @@
     filecolor=magenta
     }
     
-%------------------------------------
+%-----------------------------
 % Custom headings for CV
-%------------------------------------
-\newcommand{\linehead}[1]	% heading after line
+%-----------------------------
+\newcommand{\linehead}[1]	% section heading after line
 	{\vspace{5mm} 
 	{\color{cvColour}
 	\hrulefill \\ 
 	{\large 
 	\textsc{{#1}}}}}
 
-\newcommand{\bighead}[1]
+\newcommand{\bighead}[1]	% 1st title line - bold
 	{\vspace{5mm} 
 	{\large 
 	{\textbf {#1}}}}
 
-\newcommand{\ithead}[1]
+\newcommand{\ithead}[1]		% 2nd title line - italic
 	{{\large 
 	{\textit {#1}}}}	
 	
-%------------------------------------
+%-----------------------------
 % Begin document
-%------------------------------------
+%-----------------------------
 \begin{document}
 
-%------------------------------------
+%-----------------------------
 % Name & Contact
-%------------------------------------
+%-----------------------------
 \begin{center}
     {\huge \color{cvColour} \textbf{JOBBY McJOBFACE}} \\
     \vspace{3mm}
@@ -78,9 +78,9 @@
 
 \vspace{-5mm}
 
-%--------------------------------------
+%-----------------------------
 %	EDUCATION
-%--------------------------------------
+%-----------------------------
 
 \linehead{Education}
 
@@ -99,9 +99,9 @@
 \end{itemize}
 
 
-%--------------------------------------
+%-----------------------------
 %	EXPERIENCE
-%--------------------------------------
+%-----------------------------
 
 \linehead{Work Experience}
 
@@ -113,9 +113,9 @@
     \item Led company in equities analyzed in two quarters
 \end{itemize}
 
-%--------------------------------------
+%-----------------------------
 %	OTHER EXPERIENCE
-%--------------------------------------
+%-----------------------------
 
 \linehead{Other Work Experience}
 
@@ -135,9 +135,9 @@
 \end{itemize}
 
 
-%--------------------------------------
+%-----------------------------
 %	SKILLS
-%--------------------------------------
+%-----------------------------
 
 \linehead{Other Information}
 \begin{description}
