@@ -1,9 +1,150 @@
 \documentclass[11pt]{article} 
 
+%-----------------------------
+% Font selection
+%-----------------------------	
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
+
+%-----------------------------
+% Page margin
+%-----------------------------	
+\usepackage[margin=1in]{geometry}            
+  \geometry{a4paper} 	
+
+%-----------------------------
+% Formatting list items
+%-----------------------------	
+\setlength{\parindent}{0pt}		  % to remove paragraph indent
+
+\usepackage{enumitem}		
+  \setlist[itemize]{noitemsep, 	% to remove space before and after list items
+	  topsep=0pt, 
+	  leftmargin=*, 
+	  label={\tiny\raisebox{1ex}{\textbullet \hspace{5pt}}}}	
+  
+%-----------------------------
+% Packages
+%-----------------------------		
+\usepackage[svgnames]{xcolor}		        % touch of colour
+  \colorlet{cvColour}{DarkOliveGreen}		% colour variable for changing all colours at once
+
+\usepackage[fixed]{fontawesome5}	    	% for icons
+  
+\usepackage{hyperref}                   % for links, should be last package to load
+\hypersetup{
+    colorlinks=true,
+    urlcolor=SeaGreen,
+    linkcolor=gray,
+    filecolor=magenta
+    }
+    
+%------------------------------------
+% Custom headings for CV
+%------------------------------------
+\newcommand{\linehead}[1]	% heading after line
+	{\vspace{5mm} 
+	{\color{cvColour}
+	\hrulefill \\ 
+	{\large 
+	\textsc{{#1}}}}}
+
+\newcommand{\bighead}[1]
+	{\vspace{5mm} 
+	{\large 
+	{\textbf {#1}}}}
+
+\newcommand{\ithead}[1]
+	{{\large 
+	{\textit {#1}}}}	
+	
+%------------------------------------
+% Begin document
+%------------------------------------
 \begin{document}
 
-%\section{}
-%\subsection{}
+%------------------------------------
+% Name & Contact
+%------------------------------------
+\begin{center}
+    {\huge \color{cvColour} \textbf{JOBBY McJOBFACE}} \\
+    \vspace{3mm}
+    \faLinkedinIn \href{https://www.linkedin.com/company/linkedin}{jobby}
+    {\color{Gray} \S}
+    \faMobile*(323) 555 1435  
+    {\color{Gray} \S}
+    \faEnvelope[regular] \textit{email@gmail.com}
+\end{center} 
+
+\vspace{-5mm}
+
+%--------------------------------------
+%	EDUCATION
+%--------------------------------------
+
+\linehead{Education}
+
+\bighead{University of Post Graduation \hfill 2019–21}
+\begin{itemize}
+    \item Cumulative GPA: 3.98
+    \item Academic interests: real-estate financing, criminal procedure, corporations
+    \item Henry Murtaugh Award
+\end{itemize}
+
+\bighead{Graduation University \hfill 2009–11}
+\begin{itemize}
+    \item B.A. summa cum laude, Economics
+    \item Extensive coursework in Astrophysics, Statistics
+    \item Van Damme Scholarship
+\end{itemize}
+
+
+%--------------------------------------
+%	EXPERIENCE
+%--------------------------------------
+
+\linehead{Work Experience}
+
+\bighead{Latest Company Ltd. \hfill 2019–21} \\
+\ithead{Designation Name}
+\begin{itemize}
+    \item Performed independent research on numerous American industries, including:
+    \item Steelmaking, croquet, semiotics, and butterscotch manufacturing
+    \item Led company in equities analyzed in two quarters
+\end{itemize}
+
+%--------------------------------------
+%	OTHER EXPERIENCE
+%--------------------------------------
+
+\linehead{Other Work Experience}
+
+\bighead{Proximate Cause \hfill 2007–08} \\
+\ithead{Assistant to the director}
+\begin{itemize}
+    \item Helped devise fundraising campaigns for this innovative nonprofit
+    \item Handled lunch orders and general errands
+\end{itemize}
+
+\bighead{Hot Topic \hfill 2004–06} \\
+\ithead{Retail-sales associate}
+\begin{itemize}
+    \item Top in-store sales associate in seven out of eight quarters
+    \item Inventory management
+    \item Training and recruiting
+\end{itemize}
+
+
+%--------------------------------------
+%	SKILLS
+%--------------------------------------
+
+\linehead{Other Information}
+\begin{description}
+\item[Programming:] C, Python, SQL, \LaTeX.
+\item[Interests:] Typography, Marketing strategies.
+\item[Languages:] Written and spoken fluency in English, French \& German.
+\end{description}
 
 
 
