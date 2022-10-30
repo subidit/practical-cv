@@ -1,3 +1,5 @@
+name: tex2pdf
+
 on: push
 
 jobs:
