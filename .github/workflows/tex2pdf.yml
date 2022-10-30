@@ -9,12 +9,12 @@ jobs:
       - name: pdflatex main
         uses: dante-ev/latex-action@latest
         with:
-          root_file: main.tex
+          root_file: practicalCV.tex
           compiler: pdflatex
           args: -interaction=nonstopmode -shell-escape
       - name: pdflatex main second run
         uses: dante-ev/latex-action@latest
         with:
-          root_file: main.tex
+          root_file: practicalCV.tex
           compiler: pdflatex
           args: -interaction=nonstopmode -shell-escape
