@@ -1,31 +1,20 @@
-name: tex2pdf
-
-on: push
-
+name: Build LaTeX document
+on: [push]
 jobs:
-  build:
+  build_latex:
     runs-on: ubuntu-latest
-    env:
-      MANUSCRIPT_PATH: practicalCV # exclude the '.tex' / '.pdf' extension!
-      LATEX: pdflatex -shell-escape
-    steps: 
-    - uses: actions/checkout@v1
-    - name: Install texlive
-      run: |
-        sudo apt-get install texlive-publishers \
-                             texlive-latex-recommended \
-                             texlive-latex-extra \
-                             texlive-fonts-recommended \
-                             texlive-fonts-extra
-    - name: Compile TeX files
-      run: |
-        ${LATEX} ${MANUSCRIPT_PATH##*/}.tex
-        ${LATEX} ${MANUSCRIPT_PATH##*/}.tex
-    - name: Push PDF file
-      run: |
-        git checkout --orphan ${GITHUB_REF##*/}-pdf
-        git rm -rf .github/
-        git rm -rf . 
-        git add -f ${MANUSCRIPT_PATH##*/}.pdf
-        git -c user.name='paper-maker' -c user.email='paper-maker' commit -m "update pdf"
-        git push -q -f https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} ${GITHUB_REF##*/}-pdf
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: pdflatex main
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: main.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+      - name: pdflatex main second run
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: main.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
