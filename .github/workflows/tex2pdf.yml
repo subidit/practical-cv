@@ -15,5 +15,4 @@ jobs:
         with:
           name: PDF
           path: practicalCV.pdf
-      - name: Action for creating GitHub Releases
-        uses: @softprops/action-gh-release
+      - uses: softprops/action-gh-release
