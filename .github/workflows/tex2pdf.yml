@@ -15,3 +15,4 @@ jobs:
         with:
           name: PDF
           path: practicalCV.pdf
+      - uses: @softprops/action-gh-release
