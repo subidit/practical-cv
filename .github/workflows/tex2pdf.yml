@@ -5,16 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: pdflatex main
-        uses: dante-ev/latex-action@latest
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: practicalCV.tex
-          compiler: pdflatex
-          args: -interaction=nonstopmode -shell-escape
-      - name: pdflatex main second run
-        uses: dante-ev/latex-action@latest
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
         with:
-          root_file: practicalCV.tex
-          compiler: pdflatex
-          args: -interaction=nonstopmode -shell-escape
+          name: PDF
+          path: practicalCV.pdf
